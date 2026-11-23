@@ -5,6 +5,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <iostream>
 
 std::vector<std::string> parseRespCommand(const std::string &input) {
     std::vector<std::string> tokens;
@@ -51,7 +52,11 @@ CommandHandler::CommandHandler() {}
 std::string CommandHandler::processCommand(const std::string &commandLine) {
     auto tokens = parseRespCommand(commandLine);
     if(tokens.empty()) return "-Error: Empty Command\r\n";
-     
+    
+    for(auto& t : tokens){
+        std::cout << t << "\n";
+    }
+
     auto cmd = tokens[0];
     std::transform(cmd.begin(), cmd.end(), cmd.begin(), ::toupper);
     std::ostringstream response;
