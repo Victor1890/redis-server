@@ -1,5 +1,5 @@
-#ifndef REDIS_COMMAND_HANDLEr_H
-#define REDIS_COMMAND_HANDLEr_H
+#ifndef REDIS_COMMAND_HANDLER_H
+#define REDIS_COMMAND_HANDLER_H
 
 #include <string>
 
@@ -9,4 +9,4 @@ public:
     std::string processCommand(const std::string &commandLine);
 };
 
-#endif // REDIS_COMMAND_HANDLEr_H
+#endif // REDIS_COMMAND_HANDLER_H
